@@ -1,5 +1,5 @@
 # Verwende ein Basis-Python-Image mit zusätzlichen Abhängigkeiten
-FROM python:3.11-slim
+FROM python:3.11-alpine
 
 # Installiere systemabhängige Pakete
 RUN apt-get update && apt-get install -y \
@@ -31,5 +31,6 @@ COPY . /app
 # Exponiere den Port, den Flask verwendet (standardmäßig 8080)
 EXPOSE 8080
 
+ENTRYPOINT ["python"]
 # Setze den Startbefehl
 CMD ["python", "src/app.py"]
