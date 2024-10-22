@@ -13,11 +13,15 @@ RUN apt-get update && apt-get install -y \
     meshlab \
     && apt-get clean
 
-# Installiere COLMAP
-RUN wget https://demuc.de/colmap/releases/colmap-linux-cuda.tar.xz \
-    && tar -xf colmap-linux-cuda.tar.xz \
-    && mv colmap /usr/local/bin/colmap
-
+RUN git clone https://github.com/colmap/colmap.git /colmap \
+    && cd /colmap \
+    && git checkout dev \
+    && mkdir build \
+    && cd build \
+    && cmake .. \
+    && make -j$(nproc) \
+    && make install
+    
 # Erstelle das Arbeitsverzeichnis
 WORKDIR /app
 
