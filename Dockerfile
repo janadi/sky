@@ -27,6 +27,6 @@ COPY . /app
 # Exponiere den Port, den Flask verwendet (standardmäßig 8080)
 EXPOSE 8080
 
-ENTRYPOINT ["python"]
+# ENTRYPOINT ["python"]
 # Setze den Startbefehl
 CMD ["python", "src/app.py"]
