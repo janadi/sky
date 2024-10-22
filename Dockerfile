@@ -1,5 +1,5 @@
 # Verwende ein Basis-Python-Image mit zusätzlichen Abhängigkeiten
-FROM python:3.11-alpine
+FROM python:3.11
 
 # Installiere systemabhängige Pakete
 RUN apt-get update && apt-get install -y \
