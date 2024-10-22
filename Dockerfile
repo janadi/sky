@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/colmap/colmap.git /colmap \
     && cd /colmap \
-    && git checkout dev \
+    && git checkout main \
     && mkdir build \
     && cd build \
     && cmake .. \
