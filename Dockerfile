@@ -11,16 +11,8 @@ RUN apt-get update && apt-get install -y \
     git \
     cmake \
     meshlab \
+    colmap \
     && apt-get clean
-
-RUN git clone https://github.com/colmap/colmap.git /colmap \
-    && cd /colmap \
-    && git checkout main \
-    && mkdir build \
-    && cd build \
-    && cmake .. \
-    && make -j$(nproc) \
-    && make install
     
 # Erstelle das Arbeitsverzeichnis
 WORKDIR /app
